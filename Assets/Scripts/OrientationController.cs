@@ -5,7 +5,8 @@ public class OrientationController : MonoBehaviour
     public enum SceneOrientation
     {
         Portrait,
-        Landscape
+        Landscape,
+        Autorotate
     }
 
     [SerializeField] private SceneOrientation sceneOrientation;
@@ -30,6 +31,14 @@ public class OrientationController : MonoBehaviour
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             Screen.autorotateToPortrait = false;
             Screen.autorotateToPortraitUpsideDown = false;
+            Screen.autorotateToLandscapeLeft = true;
+            Screen.autorotateToLandscapeRight = true;
+        }
+        else if (sceneOrientation == SceneOrientation.Autorotate)
+        {
+            Screen.orientation = ScreenOrientation.AutoRotation;
+            Screen.autorotateToPortrait = true;
+            Screen.autorotateToPortraitUpsideDown = true;
             Screen.autorotateToLandscapeLeft = true;
             Screen.autorotateToLandscapeRight = true;
         }

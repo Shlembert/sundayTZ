@@ -30,5 +30,37 @@ public class SceneManagerController : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            switch (sceneIndex)
+            {
+                case 0:
+                    Application.Quit();
+                    break;
+                case 1:
+                    SwitchScene(sceneIndex -1);
+                    break;
+                case 2:
+                    SwitchScene(sceneIndex - 1);
+                    break;
+                case 3:
+                    SwitchScene(sceneIndex - 1);
+                    break;
+                case 4:
+                    SwitchScene(1);
+                    break;
+                case 5:
+                    SwitchScene(1);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }
 
